@@ -1,0 +1,38 @@
+from pyfiglet import figlet_format
+from termcolor import colored
+import time
+import random
+
+d_s = figlet_format('DDOS ATTACK', 'slant')
+print(colored(d_s, 'red'))
+ip_target = input("Ip Target: ")
+port = int(input('Port: '))
+oyla = random.randint(port,10000)   
+if type(port) == int and port!=10000:
+    a_s = figlet_format("Attack Starting", 'slant')
+    print(colored(a_s, 'green'))
+    print("[                    ] 0%") #0ta '=', 20ta ' '
+    time.sleep(3)
+    print("[=====               ] 25%") #5ta '=', 15ta ' '
+    time.sleep(3)
+    print("[==========          ] 50%") #10ta '=', 10ta ' '
+    time.sleep(3)
+    print("[===============     ] 75%") #15ta '=', 5ta ' '
+    time.sleep(3)
+    print("[====================] 100%") #20ta '=', 0ta ' '
+    time.sleep(3)
+    son = 0
+    while True:
+        print(colored(f"Sent {son} packet to {ip_target} throught port:{port}", 'blue'))
+        port += 1
+        son += 1
+        if port==oyla:
+            active = figlet_format("DDOS ATTACK IS ACTIVED!!!",'slant')
+            print(colored(active, 'red'))
+            break
+elif port>10000:
+    failed = figlet_format("DDOS ATTACK IS FAILED !!!", 'slant')
+    print(colored(failed, 'red'))
+else:
+    failed = figlet_format("DDOS ATTACK IS FAILED !!!", 'slant')
+    print(colored(failed, 'red'))
